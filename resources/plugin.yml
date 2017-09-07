@@ -1,0 +1,5 @@
+name: BeefyAntiCheat
+main: net.angusbeefgaming.beefyanticheat.Main
+author: ["Atticus Zambrana"]
+version: 1.0
+commands:
