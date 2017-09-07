@@ -6,7 +6,9 @@ import net.angusbeefgaming.beefyanticheat.Main;
 
 public class onPlayerMove implements Listener {
 	@EventHandler
-	public void whenPlayerMove(PlayerMoveEvent event) {
-  
+	public void whenPlayerGameModeUpdate(PlayerGameModeChangeEvent event) {
+		Player player = event.getPlayer();
+		GameMode gamemode = event.getNewGameMode();
+		if(player.)
 	}
 }
