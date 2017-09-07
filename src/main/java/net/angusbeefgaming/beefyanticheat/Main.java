@@ -9,6 +9,8 @@ public class Main extends JavaPlugin {
 		getLogger().info("Beefy Anti-Cheat is Ready!");
 		// Register the Fly Check event
 		getServer().getPluginManager().registerEvents(this, new net.angusbeefgaming.beefyanticheat.event.onPlayerMove(), this);
+		// Register the Gamemode Check Event
+		getServer().getPluginManager().registerEvents(this, new net.angusbeefgaming.beefyanticheat.event.gamemodeCheck(), this);
 	}
 	@Override
 	public void onDisable() {
