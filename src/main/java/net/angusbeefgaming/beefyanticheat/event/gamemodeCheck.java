@@ -9,6 +9,18 @@ public class onPlayerMove implements Listener {
 	public void whenPlayerGameModeUpdate(PlayerGameModeChangeEvent event) {
 		Player player = event.getPlayer();
 		GameMode gamemode = event.getNewGameMode();
-		if(player.)
+		if(player.getGameMode() == GameMode.CREATIVE) {
+			if(player.hasPermission("bac.gamemode.creative")) {
+				return;
+			}
+			else {
+				player.setGameMode(GameMode.SURVIVAL);
+				player.kickPlayer("[BAC CHEAT DETECTION]: Kicked for using Creative Mode.");
+				return;
+			}
+		}
+		else {
+			return;
+		}
 	}
 }
