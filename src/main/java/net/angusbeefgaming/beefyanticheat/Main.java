@@ -2,8 +2,8 @@ package net.angusbeefgaming.beefyanticheat;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-
 public class Main extends JavaPlugin {
+	public static Main plugin;
 	@Override
 	public void onEnable() {
 		getLogger().info("Beefy Anti-Cheat is Ready!");
