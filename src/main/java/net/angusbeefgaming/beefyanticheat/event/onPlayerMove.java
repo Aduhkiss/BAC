@@ -36,26 +36,4 @@ public class onPlayerMove implements Listener {
 		}
 	}
 	
-	// Speed Hacking Detection
-	@EventHandler
-	public void speedCheck(PlayerMoveEvent event) {
-		Player player = event.getPlayer();
-		if(player.getWalkSpeed() > 0.2F) {
-			if(event.getPlayer().hasPermission("bac.bypass.speed")) {
-				event.getPlayer().kickPlayer("[BAC CHEAT DETECTION]: Kicked for Speed Hacking");
-				for(Player p : Bukkit.getOnlinePlayers()) {
-					if(p.hasPermission("bac.alert")) {
-						p.sendMessage("[BAC CHEAT DETECTION]: Player " + event.getPlayer().getName() + " has been kicked for Speed Hacking!");
-					}
-				}
-				return;
-			}
-			else {
-				
-			}
-		}
-		else {
-			return;
-		}
-	}
 }
