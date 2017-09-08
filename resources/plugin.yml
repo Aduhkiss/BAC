@@ -3,3 +3,7 @@ main: net.angusbeefgaming.beefyanticheat.Main
 author: ["Atticus Zambrana"]
 version: 1.0
 commands:
+  bac:
+    description: Main BAC Command
+  baccast:
+    description: Broadcast a message as BAC
