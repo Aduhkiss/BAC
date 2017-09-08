@@ -15,6 +15,7 @@ public class onPlayerMove implements Listener {
 			}
 			else {
 				player.setGameMode(GameMode.SURVIVAL);
+				Bukkit.getServer().DispatchCommand(GetServer().getConsoleSender(), "kill " + player.getName());
 				player.kickPlayer("[BAC CHEAT DETECTION]: Kicked for using Creative Mode.");
 				// Send an alert to all staff
 				for(Player p : Bukkit.getOnlinePlayers()) {
