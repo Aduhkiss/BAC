@@ -1,21 +1,23 @@
 package net.angusbeefgaming.beefyanticheat.event;
 
+import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import net.angusbeefgaming.beefyanticheat.Main;
+import org.bukkit.event.player.PlayerGameModeChangeEvent;
 
-public class onPlayerMove implements Listener {
+public class gamemodeCheck implements Listener {
 	@EventHandler
 	public void whenPlayerGameModeUpdate(PlayerGameModeChangeEvent event) {
 		Player player = event.getPlayer();
 		GameMode gamemode = event.getNewGameMode();
-		if(player.getGameMode() == GameMode.CREATIVE) {
+		if(event.getNewGameMode() == GameMode.CREATIVE) {
 			if(player.hasPermission("bac.gamemode.creative")) {
 				return;
 			}
 			else {
 				player.setGameMode(GameMode.SURVIVAL);
-				Bukkit.getServer().DispatchCommand(GetServer().getConsoleSender(), "kill " + player.getName());
 				player.kickPlayer("[BAC CHEAT DETECTION]: Kicked for using Creative Mode.");
 				// Send an alert to all staff
 				for(Player p : Bukkit.getOnlinePlayers()) {
